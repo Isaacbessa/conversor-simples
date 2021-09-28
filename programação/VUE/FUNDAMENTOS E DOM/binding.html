@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+<p>{{Link}}</p>
+<p><a href="{{Link}}">Youtube</a></p>
+<p><a v-bind:href="Link">Youtube?</a></p> <!--v-bind é um diretorio para o destino, que seria o link dentro do objeto-->
+<p><a :href="Link">OLá</a></p>
+<!--Propriedades v-bind:href e :href seria o melhor jeito de acessar o destino-->
+<p>
+    <input type="text" v-model="nome"> <br> <!--vv-model é uma diretiva dentro de um input que seria uma caixa com o tipo texto-->
+    <span>{{nome}}</span>
+</p>
+    </div>
+    <script>
+       new Vue({
+           el: '#app', //# seleciona o id
+           data: {
+               nome: 'Maria',
+               Link: "https://www.youtube.com/"
+           },
+           watch: { 
+               //O watchserve para monitorar as mudanças de uma determinada variável, e fazer algo em resposta a essas determinadas alterações.
+                nome(novoValor) { //manipulando apenas o nome, que ficará em letras maisculas
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+       })
+    </script>
+</body>
+</html>

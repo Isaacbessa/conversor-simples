@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }}</p> <!--diretiva usada para se usar uma vez, bloqueia o acesso ao titulo-->
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a> <!--criando um link de acesso-->
+    <hr>
+    <p v-html="linkHtml"></p> <!--interporlando com a função criando, que dentro tem um link, e a diretiva v-html se conectará com o link-->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            link: 'http://google.com.br',
+            linkHtml: '<a href="http://google.com">Google</a>'
+        },
+        methods: {
+            saudacao: function() {
+                this.titulo = 'Bom dia!!!'
+                return this.titulo
+            }
+        }
+    })
+</script>
