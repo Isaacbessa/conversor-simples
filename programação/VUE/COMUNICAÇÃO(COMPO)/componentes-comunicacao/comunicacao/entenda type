@@ -1,3 +1,0 @@
-O type é usado para garantir que somente aquele tipo de dado será passado para o componente.
-É altamente recomendado usá-lo para evitar side-effe
-Ele aceita os seguintes tipos: String, Number, Boolean, Function, Object, Array e Symbol.
